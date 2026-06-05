@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: market-backend
+  cache:
+    type: caffeine
+    # TTL and size are set in CacheConfig bean; this just selects the provider.
+
+ml:
+  service:
+    url: ${ML_SERVICE_URL:http://localhost:8000}
+    connect-timeout-ms: 5000
+    read-timeout-ms: 10000
+
+logging:
+  level:
+    com.hsbc: INFO
+    root: WARN
